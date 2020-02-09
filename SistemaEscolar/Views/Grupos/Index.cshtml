@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SistemaEscolar.Models.Grupos>
+
+@{
+    ViewBag.Title = "Disciplinas";
+}
+
+<h2>Lista de Disciplinas</h2>
+
+<p>
+    @Html.ActionLink("Nova Disciplina", "Create", new { }, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Professor")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            Estudantes
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Professor.NomeCompleto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <th>
+            @Html.DisplayFor(model => item.GruposDetalhes.Count)
+        </th>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GrupoId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GrupoId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GrupoId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
