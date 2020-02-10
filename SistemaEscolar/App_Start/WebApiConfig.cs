@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SistemaEscolar
 {
@@ -9,8 +10,14 @@ namespace SistemaEscolar
     {
         public static void Register(HttpConfiguration config)
         {
+            var politicas = new EnableCorsAttribute(
+          origins: "*",
+          methods: "*",
+          headers: "*"
+          );
+        config.EnableCors(politicas);
             // Web API configuration and services
-
+            config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
 

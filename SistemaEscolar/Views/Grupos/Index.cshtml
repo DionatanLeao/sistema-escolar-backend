@@ -35,9 +35,9 @@
             @Html.DisplayFor(model => item.GruposDetalhes.Count)
         </th>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GrupoId }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GrupoId }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GrupoId }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Editar", "Edit", new { id=item.GrupoId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.GrupoId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.GrupoId }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

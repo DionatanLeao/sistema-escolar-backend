@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SistemaEscolar.Models.Notas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lançamento de Notas";
 }
 
-<h2>Index</h2>
+<h2>Lançamento de Notas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo Lançamento", "Create", null, new { @class = "btn btn-success" })
 </p>
 <table class="table">
     <tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Nota)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.NotaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.NotaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.NotaId })
+            @Html.ActionLink("Editar", "Edit", new { id = item.NotaId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.NotaId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.NotaId }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

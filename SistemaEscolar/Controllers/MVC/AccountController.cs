@@ -9,10 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SistemaEscolar.Models;
+using System.Web.Http.Cors;
 
 namespace SistemaEscolar.Controllers
 {
-    [Authorize]
+    [EnableCors(origins: "*", methods: "*", headers: "*")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
